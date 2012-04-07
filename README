@@ -12,4 +12,6 @@ Then, I will generalise it.
 >>Just linking of the GUI with the parser and image downloader is left.
 >>After that, focus will be on alignment and size resolution of image and development of GUI.
 
+Thanks to Jsoup [http://jsoup.org/] for the HTML parsing Library :)
+
 Written by Divyanshu Verma
