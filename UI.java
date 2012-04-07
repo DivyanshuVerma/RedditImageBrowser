@@ -8,6 +8,7 @@ class UI extends JFrame implements ActionListener
 	JButton prev, next;
 	JLabel info;
 	UI_ImagePanel ip;
+	JScrollPane sp;
 	String linkarr[];
 	int top;
 	UI() throws Exception
@@ -42,10 +43,13 @@ class UI extends JFrame implements ActionListener
 		ip.setLayout(null);
 		ip.setOpaque(true);
 
+		sp = new JScrollPane(ip);
+		sp.setBounds(0,50,800,650);
+
 		c.add(prev);
 		c.add(next);
 		c.add(info);
-		c.add(ip);
+		c.add(sp);
 
 		linkarr = ParseLinks.readPage("http://www.reddit.com/r/fffffffuuuuuuuuuuuu/");
 		top = 1;
@@ -68,10 +72,6 @@ class UI extends JFrame implements ActionListener
 				String url = linkarr[++top];
 				System.out.println(url);
 				ImageDwnl.readIm(url, new File("temp-im.png"));
-				//ip = new UI_ImagePanel("temp-im.png");
-				//ip.setBounds(0,50,800,650);
-				//ip.setLayout(null);
-				//ip.setOpaque(true);
 				ip.changeImage("temp-im.png");
 				repaint();
 			}
