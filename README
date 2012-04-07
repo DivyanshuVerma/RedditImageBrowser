@@ -10,7 +10,9 @@ Then, I will generalise it.
 
 Updates:
 >>Developed the basic GUI, code parses the links, images are downloaded and viewed. Images are scaled to fit in the GUI area.
->>Thinking of adding a scrollbar to the image so that it can be viewed nicely. :)
+>>Scrollbar added.
+>>Have to work with the previous button, plus local storage of the images that are downloaded.
+>>Also, have to work with different pages with other search results of the same link.
 
 Thanks to Jsoup [http://jsoup.org/] for the HTML parsing Library :)
 

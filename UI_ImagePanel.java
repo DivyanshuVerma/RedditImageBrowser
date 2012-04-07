@@ -39,15 +39,17 @@ public class UI_ImagePanel extends JPanel
 	protected void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-		g.drawImage(image, x, y, 700,500, this);
+		//g.drawImage(image, x, y, 700,500, this);
+		g.drawImage(image, x, y, this);
 	}
-	public void changeImage(String str) throws Exception
+	public int changeImage(String str) throws Exception
 	{
 		this.image =  ImageIO.read(new File(str));
-		//int w = image.getWidth();
+		int w = image.getWidth();
 		int pw = this.getWidth();
-		x = (pw- 700)/2;
+		x = (pw-w)/2;
 		y = 0;
 		paintComponent(this.getGraphics());
+		return image.getHeight();
 	}
 }

@@ -10,6 +10,7 @@ class UI extends JFrame implements ActionListener
 	UI_ImagePanel ip;
 	JScrollPane sp;
 	String linkarr[];
+	JLabel url_info;
 	int top;
 	UI() throws Exception
 	{
@@ -38,13 +39,18 @@ class UI extends JFrame implements ActionListener
 		info.setHorizontalAlignment(JLabel.CENTER);
 		info.setBounds(100,0,600,30);
 
+		url_info = new JLabel("<html><h2>debian.gif</h2></html>");
+		url_info.setHorizontalAlignment(JLabel.CENTER);
+
 		ip = new UI_ImagePanel();
-		ip.setBounds(0,50,800,650);
 		ip.setLayout(null);
 		ip.setOpaque(true);
+		ip.setPreferredSize(new Dimension(795, 500));
+
+		ip.add(url_info);
 
 		sp = new JScrollPane(ip);
-		sp.setBounds(0,50,800,650);
+		sp.setBounds(0,50,795,550);
 
 		c.add(prev);
 		c.add(next);
@@ -72,7 +78,12 @@ class UI extends JFrame implements ActionListener
 				String url = linkarr[++top];
 				System.out.println(url);
 				ImageDwnl.readIm(url, new File("temp-im.png"));
-				ip.changeImage("temp-im.png");
+				int ht = ip.changeImage("temp-im.png");
+				System.out.println(ht);
+				url_info.setText("<html><h2>"+url+"</h2></html>");
+				url_info.setBounds(100,0,600, 2*ht + 50);
+				ip.setPreferredSize(new Dimension(800, ht + 100));
+				sp.getVerticalScrollBar().setValue(0);
 				repaint();
 			}
 		}
