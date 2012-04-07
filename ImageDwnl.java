@@ -16,7 +16,7 @@ class ImageDwnl
 			try
 			{
 				image = ImageIO.read(url);
-				ImageIO.write(image, "jpg" , filename);
+				ImageIO.write(image, "png" , filename);
 				break;
 			}
 			catch(ConnectException e)

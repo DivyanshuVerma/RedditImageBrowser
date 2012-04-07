@@ -1,12 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 class UI extends JFrame implements ActionListener
 {
 	JButton prev, next;
 	JLabel info;
 	UI_ImagePanel ip;
+	String linkarr[];
+	int top;
 	UI() throws Exception
 	{
 		super("Reddit Image Browser");
@@ -44,6 +47,9 @@ class UI extends JFrame implements ActionListener
 		c.add(info);
 		c.add(ip);
 
+		linkarr = ParseLinks.readPage("http://www.reddit.com/r/fffffffuuuuuuuuuuuu/");
+		top = 1;
+
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
@@ -51,6 +57,27 @@ class UI extends JFrame implements ActionListener
 
 	public void actionPerformed(ActionEvent e)
 	{
+		try{
+		if(e.getSource()==prev)
+		{
+		}
+		else if(e.getSource()==next)
+		{
+			if(top<Integer.parseInt(linkarr[0]))
+			{
+				String url = linkarr[++top];
+				System.out.println(url);
+				ImageDwnl.readIm(url, new File("temp-im.png"));
+				//ip = new UI_ImagePanel("temp-im.png");
+				//ip.setBounds(0,50,800,650);
+				//ip.setLayout(null);
+				//ip.setOpaque(true);
+				ip.changeImage("temp-im.png");
+				repaint();
+			}
+		}
+		else;
+		}catch(Exception ex){System.out.println();}
 	}
 
 	public static void main(String abc[]) throws Exception
