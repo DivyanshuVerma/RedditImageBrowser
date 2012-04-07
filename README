@@ -1,5 +1,6 @@
 ==UNDER DEVELOPMENT==
 
+My first application, which is started after I made an account on github.
 A client application which lets you browse images posted on reddit without the need of a browser.
 It will download the images, then display them on a GUI.
 Will be developed first for
@@ -7,10 +8,9 @@ http://www.reddit.com/r/fffffffuuuuuuuuuuuu/
 as this idea striked me while I was browsing pics there :)
 Then, I will generalise it.
 
->>Developed the basic UI, and displays the debian logo demo image.
->>Code for parsing of link, and downloading the image is ready
->>Just linking of the GUI with the parser and image downloader is left.
->>After that, focus will be on alignment and size resolution of image and development of GUI.
+Updates:
+>>Developed the basic GUI, code parses the links, images are downloaded and viewed. Images are scaled to fit in the GUI area.
+>>Thinking of adding a scrollbar to the image so that it can be viewed nicely. :)
 
 Thanks to Jsoup [http://jsoup.org/] for the HTML parsing Library :)
 
