@@ -7,4 +7,9 @@ http://www.reddit.com/r/fffffffuuuuuuuuuuuu/
 as this idea striked me while I was browsing pics there :)
 Then, I will generalise it.
 
+>>Developed the basic UI, and displays the debian logo demo image.
+>>Code for parsing of link, and downloading the image is ready
+>>Just linking of the GUI with the parser and image downloader is left.
+>>After that, focus will be on alignment and size resolution of image and development of GUI.
+
 Written by Divyanshu Verma

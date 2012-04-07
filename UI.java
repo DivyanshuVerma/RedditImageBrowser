@@ -6,7 +6,8 @@ class UI extends JFrame implements ActionListener
 {
 	JButton prev, next;
 	JLabel info;
-	UI()
+	UI_ImagePanel ip;
+	UI() throws Exception
 	{
 		super("Reddit Image Browser");
 		setSize(800,600);
@@ -29,12 +30,19 @@ class UI extends JFrame implements ActionListener
 		next.setBounds(700,0,100,30);
 		next.addActionListener(this);
 
-		info = new JLabel("");
-		info.setBounds(100,400,500,30);
+		info = new JLabel("<html><h2>debian.gif</h2></html>");
+		info.setHorizontalAlignment(JLabel.CENTER);
+		info.setBounds(100,0,600,30);
+
+		ip = new UI_ImagePanel();
+		ip.setBounds(0,50,800,650);
+		ip.setLayout(null);
+		ip.setOpaque(true);
 
 		c.add(prev);
 		c.add(next);
 		c.add(info);
+		c.add(ip);
 
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -43,18 +51,9 @@ class UI extends JFrame implements ActionListener
 
 	public void actionPerformed(ActionEvent e)
 	{
-		if(e.getSource()==prev)
-		{
-			info.setText("This button will display the previous image.");
-		}
-		else if(e.getSource()==next)
-		{
-			info.setText("This button will display the next image.");
-		}
-		else;
 	}
 
-	public static void main(String abc[])
+	public static void main(String abc[]) throws Exception
 	{
 		new UI();
 	}
