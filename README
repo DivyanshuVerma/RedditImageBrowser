@@ -9,10 +9,10 @@ as this idea striked me while I was browsing pics there :)
 Then, I will generalise it.
 
 Updates:
->>Developed the basic GUI, code parses the links, images are downloaded and viewed. Images are scaled to fit in the GUI area.
->>Scrollbar added.
->>Have to work with the previous button, plus local storage of the images that are downloaded.
+>>Developed the basic GUI, code parses the links, images are downloaded and viewed, Scrollbar added for larger images.
+>>Local storage of files that have been downloaded once is also added. So, once you view an image, whenever you view it later on, you can view it faster. It doesn't need to be downloaded. 
 >>Also, have to work with different pages with other search results of the same link.
+>>Plus, have to add the feature to do the downloading of images that you are yet to view in the background.
 
 Thanks to Jsoup [http://jsoup.org/] for the HTML parsing Library :)
 
