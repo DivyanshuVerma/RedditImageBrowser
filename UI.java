@@ -70,6 +70,19 @@ class UI extends JFrame implements ActionListener
 		try{
 		if(e.getSource()==prev)
 		{
+			if(top>0)
+			{
+				String url = linkarr[--top];
+				System.out.println(url);
+				ImageDwnl.readIm(url, new File("temp-im.png"));
+				int ht = ip.changeImage("temp-im.png");
+				System.out.println(ht);
+				url_info.setText("<html><h2>"+url+"</h2></html>");
+				url_info.setBounds(100,0,600, 2*ht + 50);
+				ip.setPreferredSize(new Dimension(800, ht + 100));
+				sp.getVerticalScrollBar().setValue(0);
+				repaint();
+			}
 		}
 		else if(e.getSource()==next)
 		{
@@ -88,7 +101,7 @@ class UI extends JFrame implements ActionListener
 			}
 		}
 		else;
-		}catch(Exception ex){System.out.println();}
+		}catch(Exception ex){System.out.println(ex);}
 	}
 
 	public static void main(String abc[]) throws Exception
