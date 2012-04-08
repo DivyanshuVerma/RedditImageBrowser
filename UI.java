@@ -66,7 +66,7 @@ class UI extends JFrame implements ActionListener
 
 		img_name[0] = linkarr[0];
 
-		top = 1;
+		top = 0;
 
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -78,7 +78,7 @@ class UI extends JFrame implements ActionListener
 		try{
 		if(e.getSource()==prev)
 		{
-			if(top>0)
+			if(top>1)
 			{
 				String url = linkarr[--top]; 
 				System.out.println(url);
