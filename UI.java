@@ -10,6 +10,7 @@ class UI extends JFrame implements ActionListener
 	UI_ImagePanel ip;
 	JScrollPane sp;
 	String linkarr[];
+	String img_name[];
 	JLabel url_info;
 	int top;
 	UI() throws Exception
@@ -58,6 +59,13 @@ class UI extends JFrame implements ActionListener
 		c.add(sp);
 
 		linkarr = ParseLinks.readPage("http://www.reddit.com/r/fffffffuuuuuuuuuuuu/");
+		img_name = new String[linkarr.length];
+
+		for(int i = 1; i<= Integer.parseInt(linkarr[0]) ; i++)
+			img_name[i] = getName(linkarr[i]);
+
+		img_name[0] = linkarr[0];
+
 		top = 1;
 
 		this.setResizable(false);
@@ -72,11 +80,13 @@ class UI extends JFrame implements ActionListener
 		{
 			if(top>0)
 			{
-				String url = linkarr[--top];
+				String url = linkarr[--top]; 
 				System.out.println(url);
-				ImageDwnl.readIm(url, new File("temp-im.png"));
-				int ht = ip.changeImage("temp-im.png");
-				System.out.println(ht);
+
+				if(!checkExist(img_name[top]))
+					ImageDwnl.readIm(url, new File("images/" + img_name[top]));
+
+				int ht = ip.changeImage("images/" + img_name[top]);
 				url_info.setText("<html><h2>"+url+"</h2></html>");
 				url_info.setBounds(100,0,600, 2*ht + 50);
 				ip.setPreferredSize(new Dimension(800, ht + 100));
@@ -90,9 +100,11 @@ class UI extends JFrame implements ActionListener
 			{
 				String url = linkarr[++top];
 				System.out.println(url);
-				ImageDwnl.readIm(url, new File("temp-im.png"));
-				int ht = ip.changeImage("temp-im.png");
-				System.out.println(ht);
+
+				if(!checkExist(img_name[top]))
+					ImageDwnl.readIm(url, new File("images/" + img_name[top]));
+
+				int ht = ip.changeImage("images/" + img_name[top]);
 				url_info.setText("<html><h2>"+url+"</h2></html>");
 				url_info.setBounds(100,0,600, 2*ht + 50);
 				ip.setPreferredSize(new Dimension(800, ht + 100));
@@ -102,6 +114,20 @@ class UI extends JFrame implements ActionListener
 		}
 		else;
 		}catch(Exception ex){System.out.println(ex);}
+	}
+
+	public String getName(String url)
+	{
+		String temp = "";
+		temp = url.substring( url.lastIndexOf("/")+1);
+		System.out.println(temp);
+		return temp;
+	}
+
+	public boolean checkExist(String fl)
+	{
+		File f = new File("images/" + fl);
+		return f.exists();
 	}
 
 	public static void main(String abc[]) throws Exception
