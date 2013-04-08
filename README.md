@@ -4,7 +4,7 @@ Reddit Image Browser
 A client application which lets you browse images posted on reddit without the need of a browser.
 It will download the images, then display them on a GUI.
 Will be developed first for
-http://www.reddit.com/r/fffffffuuuuuuuuuuuu/
+[this page](http://www.reddit.com/r/fffffffuuuuuuuuuuuu/)
 as this idea striked me while I was browsing pics there :)
 Then, I will generalise it.
 
