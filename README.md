@@ -26,7 +26,7 @@ Runs on both windows and linux.
 Attributions
 ------------
 
-Thanks to Jsoup [http://jsoup.org/] for the HTML parsing Library :)
+Thanks to [Jsoup](http://jsoup.org/)  for the HTML parsing Library :)
 
 Author
 ------
